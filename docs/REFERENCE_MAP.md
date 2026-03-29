@@ -1,0 +1,26 @@
+# Reference Map
+
+## Purpose
+
+이 문서는 기존 세부 문서가 새 그룹 문서 어디에 포함되는지 빠르게 찾기 위한 매핑 문서다.
+
+## Mapping
+
+| 새 그룹 문서 | 포함되는 기존 문서 |
+| --- | --- |
+| `01_FOUNDATIONS.md` | `EXPERIMENT_FRAMEWORK.md`, `STATISTICAL_FOUNDATIONS.md`, `TEST_DESIGN_AND_POWER.md` |
+| `02_EXPERIMENT_POLICY.md` | `EXPERIMENT_POLICY_BASE.md`, `EXPERIMENT_POLICY.md`, `DATA_POLICY.md`, `PARTICIPANT_POLICY.md`, `RESULT_POLICY.md` |
+| `03_METRICS.md` | `METRIC_DICTIONARY.md`, `KPI_TABLE.md` |
+| `04_VALIDITY_AND_TRUST.md` | `PITFALLS_AND_DATA_QUALITY.md`, `NOVELTY_AND_NETWORK_EFFECTS.md` |
+| `05_ADVANCED_METHODS.md` | `RATIO_METRICS.md`, `MULTIPLE_TESTING.md`, `VARIANCE_REDUCTION.md`, `SEQUENTIAL_TESTING.md` |
+| `06_PLATFORM_SCHEMA.md` | `DATA_SCHEMA.md`, `STATISTICAL_COLUMNS.md` |
+| `07_OPERATIONS_AND_DECISIONS.md` | `OPERATION_GUIDE.md`, `DECISION_RULE.md` |
+
+## Appendix
+
+- `COMMUNITY_BENCHMARKS.md`
+- `V1_SCOPE_AND_GAPS.md`
+
+## Archive Note
+
+기존 세부 문서는 `docs/` 아래에 보관한다.
