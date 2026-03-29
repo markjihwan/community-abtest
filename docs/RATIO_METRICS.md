@@ -114,6 +114,19 @@ bootstrap은 분포 가정이 약한 환경에서 유용한 대안이다.
 
 예를 들어 `active user당 conversion`에서 active user 정의 자체가 treatment에 의해 바뀐다면, ratio 해석이 꼬일 수 있다.
 
+**⚠ 경고: 분모가 treatment에 영향을 받는 경우 ratio metric의 인과 해석은 불가능하다.**
+
+분모 자체가 treatment의 결과물이 되면, ratio는 더 이상 "같은 기준 위에서의 비교"가 아니다. 예시:
+
+- `완주율 = 완주 인원 / 첫 참여 인원`에서, treatment가 첫 참여 기준을 바꾼다면 분모가 달라져 두 cohort의 비교 자체가 무의미해진다.
+- `참여자당 피드백 수`에서, treatment가 피드백 참여를 장려한다면 분자와 분모가 동시에 영향을 받아 해석이 왜곡된다.
+
+이 경우 해결 방법:
+
+- 분모를 treatment 이전 시점으로 고정한다 (pre-treatment 기준).
+- 분자와 분모를 분리해서 각각 독립적으로 분석한다.
+- 또는 ratio 대신 절대값 지표로 대체한다.
+
 ### 3. 가능하면 absolute metric도 함께 저장한다
 
 ratio만 보면 무엇이 변했는지 놓칠 수 있다.

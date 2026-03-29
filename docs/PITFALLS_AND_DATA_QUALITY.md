@@ -90,7 +90,7 @@ Microsoft ExP 문서의 taxonomy를 기준으로 보면 원인은 대체로 아�
 
 - SRM이 감지되면 먼저 품질 이슈로 분류한다.
 - root cause를 모른 채 결과 해석을 진행하지 않는다.
-- untriggered와 triggered 분석을 분리해 본다.
+- untriggered와 triggered 분석을 분리해 본다. **단, 이 분리 자체가 새로운 selection bias를 만들 수 있다.** triggered 집합이 treatment에 의해 영향을 받는다면, 분리 후 분석은 SRM보다 더 큰 편향을 낳을 수 있다. 분리 전 triggered 집합의 정의가 treatment와 독립적임을 먼저 확인한다.
 - segment별로 SRM이 국소적인지 광범위한지 본다.
 
 ## 5. Instrumentation and Event Tracking Issues

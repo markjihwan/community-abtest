@@ -86,6 +86,12 @@ Statsig 설명의 핵심은, pre-period value와 post-period outcome의 상관�
 - outcome과 상관이 높아야 하며
 - assignment와 독립이어야 한다
 
+**보충: "assignment와 독립"의 정확한 의미**
+
+무작위 배정(randomization)이 이루어진 경우, pre-treatment covariate는 이론상 assignment와 자동으로 독립이다. 따라서 이 조건은 **randomized 실험에서는 자동 충족**된다.
+
+단, 이 프로젝트처럼 cohort 기반 quasi-experiment 환경에서는 pre-treatment covariate가 cohort 선택(배정)과 상관될 수 있다. 예를 들어 이전 기수 출석률이 높은 사람일수록 특정 기수를 선택할 가능성이 있다면, covariate와 assignment가 독립이 아니게 된다. 이 경우 CUPED 적용 전 covariate와 cohort 간 상관 여부를 먼저 확인해야 한다.
+
 ### Best Use Cases
 
 Statsig는 CUPED가 특히 `existing user experiments`에서 강하다고 설명한다. 기존 사용자에겐 historical data가 있기 때문이다.

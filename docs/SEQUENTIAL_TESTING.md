@@ -40,6 +40,8 @@ Sequential testing은 이 문제를 해결하면서 `look early and often`을 �
 
 Wish 사례는 이 점을 아주 직관적으로 보여준다. 고정 표본 t-test를 기반으로 peeking하면 false positive rate가 크게 올라간다. 해당 글의 시뮬레이션에서는 A/A test에서 false positive rate가 대략 `4.7%`에서 `21%` 수준으로 뛰었다.
 
+**주의: 이 수치는 Wish의 특정 시뮬레이션 조건(peeking 횟수, 표본 규모, 실험 기간 등)에서 나온 값이다.** 실제 false positive 상승폭은 peeking 횟수, 확인 시점, 표본 크기에 따라 크게 달라진다. 이 수치를 범용 기준으로 해석하지 않는다.
+
 ## 4. Group Sequential Tests and Alpha-Spending
 
 ### Group Sequential Tests

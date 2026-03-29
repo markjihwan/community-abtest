@@ -90,6 +90,15 @@ SUTVA가 깨진다는 것은 한 사용자의 처치 효과가 다른 사용자�
 
 DoorDash는 네트워크 효과가 강한 문제에서 단순 A/B가 비효율적이라고 설명한다. 한쪽 treatment 변화가 시스템 전체 수요/공급 균형을 바꾸기 때문에, control과 treatment를 사용자 단위로 독립 비교하기 어렵다.
 
+**SUTVA 위반 시 편향 방향에 대한 주의:**
+
+SUTVA가 깨질 때 treatment effect 추정이 어느 방향으로 편향되는지는 시스템 구조에 따라 달라진다.
+
+- **과대 추정(upward bias)**: treatment가 control 집단에도 긍정적 spillover를 만드는 경우. 두 집단의 차이가 실제보다 작게 보여, 효과를 과소 추정하는 것처럼 보일 수 있다.
+- **과소 추정(downward bias)**: treatment 집단이 control 집단의 자원을 빼앗는 경우(예: marketplace에서 배차 경쟁). 두 집단 차이가 실제보다 크게 보여, 효과를 과대 추정하게 된다.
+
+따라서 "SUTVA가 깨지면 효과가 부풀려진다"는 단순 일반화는 틀릴 수 있다. 편향 방향은 반드시 해당 시스템의 상호작용 구조를 분석한 뒤 판단해야 한다.
+
 ## 7. Cluster Randomization
 
 ### What It Is
