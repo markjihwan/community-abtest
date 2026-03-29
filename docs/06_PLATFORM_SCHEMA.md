@@ -12,8 +12,8 @@
 
 ## Read These
 
-- [`DATA_SCHEMA.md`](DATA_SCHEMA.md)
-- [`STATISTICAL_COLUMNS.md`](STATISTICAL_COLUMNS.md)
+- [`DATA_SCHEMA.md`](archive/DATA_SCHEMA.md)
+- [`STATISTICAL_COLUMNS.md`](archive/STATISTICAL_COLUMNS.md)
 
 ## Key Takeaways
 

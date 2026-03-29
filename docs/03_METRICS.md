@@ -12,8 +12,8 @@
 
 ## Read These
 
-- [`METRIC_DICTIONARY.md`](METRIC_DICTIONARY.md)
-- [`KPI_TABLE.md`](KPI_TABLE.md)
+- [`METRIC_DICTIONARY.md`](archive/METRIC_DICTIONARY.md)
+- [`KPI_TABLE.md`](archive/KPI_TABLE.md)
 
 ## Key Takeaways
 

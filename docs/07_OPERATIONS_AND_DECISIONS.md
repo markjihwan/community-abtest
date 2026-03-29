@@ -12,8 +12,8 @@
 
 ## Read These
 
-- [`OPERATION_GUIDE.md`](OPERATION_GUIDE.md)
-- [`DECISION_RULE.md`](DECISION_RULE.md)
+- [`OPERATION_GUIDE.md`](archive/OPERATION_GUIDE.md)
+- [`DECISION_RULE.md`](archive/DECISION_RULE.md)
 
 ## Key Takeaways
 
