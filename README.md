@@ -41,6 +41,44 @@
 6. [`docs/07_OPERATIONS_AND_DECISIONS.md`](docs/07_OPERATIONS_AND_DECISIONS.md)
 7. [`docs/05_ADVANCED_METHODS.md`](docs/05_ADVANCED_METHODS.md)
 
+## Claude Code 연동
+
+이 레포는 Claude Code와 함께 사용할 수 있도록 Agent + Skills가 구성되어 있다.
+
+### 시작 방법
+
+Node.js가 설치되어 있어야 한다. 이후 이 레포 디렉토리에서 `claude`를 실행하면 MCP가 자동으로 `./docs`를 마운트한다.
+
+```bash
+git clone <this-repo>
+cd community-abtest
+claude
+```
+
+### Agent
+
+- `abtest-analyst` — 실험 분석 전문가. 판단 원칙과 Syneidesis(갭 추적) 패턴이 내장되어 있다.
+
+### Skills
+
+| Skill | 트리거 예시 |
+|---|---|
+| `experiment-register` | "실험 시작 전에 뭐 해야 해" |
+| `metrics-definition` | "지표 어떻게 정의해", "guardrail 뭐로 잡아" |
+| `experiment-design` | "실험 설계해줘", "샘플 사이즈 계산" |
+| `validity-check` | "SRM 의심돼", "이 실험 믿어도 돼?" |
+| `knowledge-audit` | "이 내용 맞아?", "새 논문 적용 가능해?" |
+| `experiment-decision` | "결과 어떻게 봐", "이거 올려도 돼?" |
+| `advanced-analysis` | "CUPED 써야 해?", "sequential testing 가능해?" |
+
+Skills는 순서대로 연결되어 있다: `experiment-register` → `experiment-design` → `validity-check` → `experiment-decision`
+
+## Experiments
+
+실제 실험 등록서는 [`experiments/`](experiments/) 폴더에 저장한다.
+
+- [`experiments/12ki_w7_magical_week.md`](experiments/12ki_w7_magical_week.md): 12기 W7 Magical Week 참여 효과 준실험 평가
+
 ## Note
 
 기존 세부 문서는 `docs/archive/`로 이동해 보관한다. 앞으로는 새 그룹 문서를 기준으로 읽고, 세부 문서는 필요할 때만 참고하는 구조를 권장한다.
