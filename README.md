@@ -72,6 +72,12 @@ community-abtest/
 │   ├── SKILL_GUIDE.md               ← Skills 활용 가이드
 │   └── archive/                     ← 세부 문서 원본
 │
+├── scripts/                         ← 결정론적 계산 스크립트 (표준 라이브러리만 사용)
+│   ├── calc_sample_size.py          ← 완주율 기반 표본 크기 계산 (Cohen's h)
+│   ├── check_balance.py             ← 공변량 균형 검사 (SMD)
+│   ├── bayesian_calc.py             ← Bayesian P(T>C) 계산 (Beta-Binomial)
+│   └── stratification_check.py     ← 층화 분석 가능 여부 (셀당 20명 기준)
+│
 └── experiments/                     ← 실험 등록서 저장소
     ├── TEMPLATE.md                  ← 실험 등록서 템플릿
     └── 12ki_w7_magical_week.md      ← 12기 W7 Magical Week 준실험

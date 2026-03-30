@@ -1,0 +1,9 @@
+{
+  "name": "community-abtest",
+  "description": "커뮤니티/러닝 프로그램 A/B 실험 설계·판단·품질 점검 — cohort 기반 quasi-experiment 환경 전용",
+  "version": "1.0.0",
+  "author": {
+    "name": "markjihwan",
+    "url": "https://github.com/markjihwan/community-abtest"
+  }
+}
