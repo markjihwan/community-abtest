@@ -83,7 +83,19 @@ community-abtest/
 
 ### 시작 방법
 
-Node.js가 설치되어 있어야 한다. 이후 이 레포 디렉토리에서 `claude`를 실행하면 MCP가 자동으로 `./docs`를 마운트한다.
+아래 두 가지가 설치되어 있어야 한다:
+- **Node.js** — MCP 서버 실행용
+- **jq** — Hook 스크립트 JSON 파싱용
+
+```bash
+# jq 설치 (Windows)
+winget install jqlang.jq
+
+# jq 설치 (Mac)
+brew install jq
+```
+
+이후 이 레포 디렉토리에서 `claude`를 실행하면 MCP가 자동으로 `./docs`를 마운트한다.
 
 ```bash
 git clone <this-repo>
