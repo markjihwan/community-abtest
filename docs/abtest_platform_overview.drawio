@@ -413,4 +413,294 @@
     </mxGraphModel>
   </diagram>
 
+  <diagram id="skills-flow" name="Skills 워크플로우">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Title -->
+        <mxCell id="title" value="Claude Code Skills — 워크플로우 연결 구조" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontStyle=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="800" height="35" as="geometry"/>
+        </mxCell>
+
+        <!-- Phase Labels -->
+        <mxCell id="lbl_plan" value="① 실험 기획" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl_design" value="② 설계 &amp; 검증" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl_run" value="③ 실험 실행" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="480" width="120" height="20" as="geometry"/>
+        </mxCell>
+        <mxCell id="lbl_decide" value="④ 결과 판단" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=11;fontColor=#666666;" vertex="1" parent="1">
+          <mxGeometry x="40" y="620" width="120" height="20" as="geometry"/>
+        </mxCell>
+
+        <!-- Phase Backgrounds -->
+        <mxCell id="bg_plan" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="170" y="85" width="1180" height="130" as="geometry"/>
+        </mxCell>
+        <mxCell id="bg_design" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="170" y="245" width="1180" height="190" as="geometry"/>
+        </mxCell>
+        <mxCell id="bg_run" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="170" y="465" width="1180" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="bg_decide" value="" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;opacity=30;" vertex="1" parent="1">
+          <mxGeometry x="170" y="605" width="1180" height="220" as="geometry"/>
+        </mxCell>
+
+        <!-- ① 실험 기획 -->
+        <mxCell id="s_register" value="&lt;b&gt;experiment-register&lt;/b&gt;&#xa;실험 등록 &amp; 승인 절차&#xa;/experiment-register" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="200" y="108" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="s_metrics" value="&lt;b&gt;metrics-definition&lt;/b&gt;&#xa;지표 정의 &amp; 우선순위&#xa;/metrics-definition" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffe6cc;strokeColor=#d79b00;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="480" y="108" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- ② 설계 & 검증 -->
+        <mxCell id="s_design" value="&lt;b&gt;experiment-design&lt;/b&gt;&#xa;실험 설계&#xa;/experiment-design" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="268" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="s_validity" value="&lt;b&gt;validity-check&lt;/b&gt;&#xa;타당도 점검&#xa;/validity-check" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="620" y="268" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="s_audit" value="&lt;b&gt;knowledge-audit&lt;/b&gt;&#xa;지식 검증 (루프)&#xa;/knowledge-audit" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="900" y="268" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Syneidesis 태그 -->
+        <mxCell id="gap_tag" value="[Gap:Assumption]&#xa;[Gap:Procedural]&#xa;[Gap:Consideration]" style="text;html=1;strokeColor=#9673a6;fillColor=#f3eef8;fontSize=9;align=left;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="268" width="160" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="gap_arrow" value="모든 Skill에 내장" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#9673a6;strokeWidth=1;dashed=1;fontSize=9;fontColor=#9673a6;" edge="1" parent="1" source="gap_tag" target="s_design">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- ③ 실험 실행 -->
+        <mxCell id="run_box" value="실험 실행 (W7 등)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="488" width="280" height="60" as="geometry"/>
+        </mxCell>
+
+        <!-- ④ 결과 판단 -->
+        <mxCell id="s_decision" value="&lt;b&gt;experiment-decision&lt;/b&gt;&#xa;결과 해석 &amp; 판단&#xa;/experiment-decision" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0e0e3;strokeColor=#006eaf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="340" y="628" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="s_advanced" value="&lt;b&gt;advanced-analysis&lt;/b&gt;&#xa;CUPED / Sequential&#xa;/advanced-analysis" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="620" y="628" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- 결론 박스들 -->
+        <mxCell id="out_ship" value="ship" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="200" y="760" width="100" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="out_hold" value="hold" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="320" y="760" width="100" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="out_rollback" value="rollback" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=13;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="440" y="760" width="100" height="45" as="geometry"/>
+        </mxCell>
+        <mxCell id="out_more" value="need_more_data" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="760" width="140" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- 주요 연결선 -->
+        <mxCell id="e1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" parent="1" source="s_register" target="s_metrics">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e2" value="지표 미정의 시" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d79b00;strokeWidth=1;dashed=1;fontSize=9;" edge="1" parent="1" source="s_metrics" target="s_design">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_reg_design" value="등록 완료 후" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="s_register" target="s_design">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b85450;strokeWidth=2;" edge="1" parent="1" source="s_design" target="s_validity">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e4" value="방법 의심 시" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#9673a6;strokeWidth=1;dashed=1;fontSize=9;" edge="1" parent="1" source="s_validity" target="s_audit">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e5" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;strokeWidth=2;" edge="1" parent="1" source="s_validity" target="run_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e6" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#006eaf;strokeWidth=2;" edge="1" parent="1" source="run_box" target="s_decision">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e7" value="need_more_data" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#9673a6;strokeWidth=1;dashed=1;fontSize=9;" edge="1" parent="1" source="s_decision" target="s_advanced">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e8" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" parent="1" source="s_decision" target="out_ship">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e9" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;strokeWidth=2;" edge="1" parent="1" source="s_decision" target="out_hold">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e10" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b85450;strokeWidth=2;" edge="1" parent="1" source="s_decision" target="out_rollback">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e11" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="s_advanced" target="out_more">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 피드백 루프 -->
+        <mxCell id="loop1" value="hold → 재점검" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;strokeWidth=1;dashed=1;fontSize=9;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="out_hold" target="s_validity">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="150" y="782"/><mxPoint x="150" y="303"/></Array></mxGeometry>
+        </mxCell>
+        <mxCell id="loop2" value="rollback → 재설계" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b85450;strokeWidth=1;dashed=1;fontSize=9;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="out_rollback" target="s_design">
+          <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="130" y="782"/><mxPoint x="130" y="303"/></Array></mxGeometry>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
+  <diagram id="experiment-case" name="W7 실험 설계 케이스">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="900" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- Title -->
+        <mxCell id="title" value="12기 W7 Magical Week — 실험 설계 구조" style="text;html=1;strokeColor=none;fillColor=none;align=center;fontStyle=1;fontSize=18;" vertex="1" parent="1">
+          <mxGeometry x="300" y="20" width="800" height="35" as="geometry"/>
+        </mxCell>
+
+        <!-- 참여자 집단 -->
+        <mxCell id="lbl_pop" value="참여자 집단 (~200명)" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="40" y="80" width="200" height="22" as="geometry"/>
+        </mxCell>
+        <mxCell id="pop_all" value="12기 전체 참여자&#xa;~200명" style="ellipse;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="80" y="110" width="180" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- 비동질성 경고 -->
+        <mxCell id="het_box" value="⚠ 비동질 집단&#xa;• 11기 경험자&#xa;• 12기 신규&#xa;• 11→12기 재참여" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="300" y="110" width="180" height="80" as="geometry"/>
+        </mxCell>
+
+        <!-- 알림 발송 -->
+        <mxCell id="notify" value="W7 시작 전&#xa;전원 알림 발송&#xa;(카카오/슬랙/이메일)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="560" y="110" width="180" height="80" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_pop_notify" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" parent="1" source="pop_all" target="notify">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- Pre-W7 스냅샷 -->
+        <mxCell id="snapshot" value="4/25 Pre-W7 스냅샷 고정&#xa;• prior_cohort_experience_flag&#xa;• attendance_count_pre_w7&#xa;• assignment_submit_count_pre_w7&#xa;• community_activity_count_pre_w7&#xa;• mentor_group_id / team_id" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=10;align=left;" vertex="1" parent="1">
+          <mxGeometry x="820" y="95" width="250" height="110" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_notify_snap" value="W7 전날" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;strokeWidth=2;fontSize=9;" edge="1" parent="1" source="notify" target="snapshot">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- W7 기간 -->
+        <mxCell id="w7_period" value="W7 기간 (4/26~5/2)" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=13;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="40" y="240" width="220" height="22" as="geometry"/>
+        </mxCell>
+
+        <!-- participation_level 분기 -->
+        <mxCell id="lbl_level" value="participation_level" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=2;fontSize=10;fontColor=#9673a6;" vertex="1" parent="1">
+          <mxGeometry x="200" y="270" width="160" height="18" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="lv0" value="notified_only&#xa;미접속" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="295" width="140" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="lv1" value="visited&#xa;접속만" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="250" y="295" width="140" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="lv2" value="partial&#xa;부분 완료" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="420" y="295" width="140" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="lv3" value="full&#xa;미션 완료" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="590" y="295" width="140" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="e_notify_lv" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1" source="notify" target="lv0">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_n_lv1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1" source="notify" target="lv1">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_n_lv2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1" source="notify" target="lv2">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_n_lv3" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1" source="notify" target="lv3">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <!-- 층화 분석 -->
+        <mxCell id="lbl_strat" value="층화 분석 (Stratified Analysis)" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="40" y="410" width="280" height="22" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="strat_aa" value="셀 A&#xa;11기 경험 + 출석 상위" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="80" y="440" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="strat_ab" value="셀 B&#xa;11기 경험 + 출석 하위" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="250" y="440" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="strat_ca" value="셀 C&#xa;신규 + 출석 상위" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="420" y="440" width="150" height="55" as="geometry"/>
+        </mxCell>
+        <mxCell id="strat_cb" value="셀 D&#xa;신규 + 출석 하위" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontSize=10;" vertex="1" parent="1">
+          <mxGeometry x="590" y="440" width="150" height="55" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="strat_lbl" value="각 셀 내에서&#xa;full vs 나머지 비교&#xa;(~50명/셀)" style="text;html=1;strokeColor=#82b366;fillColor=#eaf7ea;fontSize=10;align=center;" vertex="1" parent="1">
+          <mxGeometry x="770" y="450" width="150" height="55" as="geometry"/>
+        </mxCell>
+
+        <!-- ITT / ATT -->
+        <mxCell id="lbl_itt" value="분석 방식" style="text;html=1;strokeColor=none;fillColor=none;fontStyle=1;fontSize=12;fontColor=#444444;" vertex="1" parent="1">
+          <mxGeometry x="40" y="560" width="120" height="22" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="itt_box" value="ITT (Intent-to-Treat)&#xa;전원 200명 기준&#xa;→ 알림 발송 효과" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="80" y="588" width="200" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="att_box" value="ATT (Average Treatment on Treated)&#xa;미션 완료자 기준&#xa;→ 실제 수행 효과" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="310" y="588" width="220" height="70" as="geometry"/>
+        </mxCell>
+        <mxCell id="dropout_box" value="이탈 분석&#xa;notified_only 집단&#xa;→ 이탈 원인 파악" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="570" y="588" width="200" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Primary Outcome -->
+        <mxCell id="outcome" value="Primary Outcome: 완주율&#xa;Supporting: W8~W10 주차별 출석률, 과제 제출률&#xa;Guardrail: 비참여자 W8 이탈률 10% 이상 증가 시 → hold" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontSize=11;align=left;" vertex="1" parent="1">
+          <mxGeometry x="80" y="720" width="500" height="70" as="geometry"/>
+        </mxCell>
+
+        <!-- Decision deadline -->
+        <mxCell id="deadline" value="Decision Deadline: 2026년 7월" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d0e0e3;strokeColor=#006eaf;fontSize=12;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="620" y="735" width="250" height="45" as="geometry"/>
+        </mxCell>
+
+        <!-- 연결선들 -->
+        <mxCell id="e_lv_strat" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#666666;strokeWidth=1;" edge="1" parent="1" source="lv3" target="strat_aa">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_strat_itt" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#6c8ebf;strokeWidth=2;" edge="1" parent="1" source="strat_aa" target="itt_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_strat_att" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#82b366;strokeWidth=2;" edge="1" parent="1" source="strat_cb" target="att_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_lv0_drop" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#b85450;strokeWidth=2;" edge="1" parent="1" source="lv0" target="dropout_box">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_out1" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;strokeWidth=2;" edge="1" parent="1" source="itt_box" target="outcome">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+        <mxCell id="e_out2" value="" style="edgeStyle=orthogonalEdgeStyle;html=1;strokeColor=#d6b656;strokeWidth=2;" edge="1" parent="1" source="att_box" target="outcome">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+
 </mxfile>
