@@ -41,6 +41,42 @@
 6. [`docs/07_OPERATIONS_AND_DECISIONS.md`](docs/07_OPERATIONS_AND_DECISIONS.md)
 7. [`docs/05_ADVANCED_METHODS.md`](docs/05_ADVANCED_METHODS.md)
 
+## 프로젝트 구조
+
+```
+community-abtest/
+│
+├── CLAUDE.md                        ← Claude Code 진입점 (맥락 + 판단 원칙)
+├── .mcp.json                        ← MCP 설정 (docs/ 마운트)
+│
+├── .claude/
+│   ├── agents/
+│   │   └── abtest-analyst.md        ← 판단 원칙 + Syneidesis 갭 추적
+│   └── skills/
+│       ├── experiment-register/     ← 실험 등록 & 승인 체크리스트
+│       ├── metrics-definition/      ← 지표 정의 & 우선순위
+│       ├── experiment-design/       ← 실험 설계 워크플로우
+│       ├── validity-check/          ← SRM, peeking, network effect 점검
+│       ├── knowledge-audit/         ← 지식 검증 루프 (autoresearch 패턴)
+│       ├── experiment-decision/     ← ship/hold/rollback/need_more_data 판정
+│       └── advanced-analysis/       ← CUPED, sequential, ratio metrics
+│
+├── docs/                            ← MCP로 마운트되는 지식 베이스
+│   ├── 01_FOUNDATIONS.md
+│   ├── 02_EXPERIMENT_POLICY.md
+│   ├── 03_METRICS.md
+│   ├── 04_VALIDITY_AND_TRUST.md
+│   ├── 05_ADVANCED_METHODS.md
+│   ├── 06_PLATFORM_SCHEMA.md
+│   ├── 07_OPERATIONS_AND_DECISIONS.md
+│   ├── SKILL_GUIDE.md               ← Skills 활용 가이드
+│   └── archive/                     ← 세부 문서 원본
+│
+└── experiments/                     ← 실험 등록서 저장소
+    ├── TEMPLATE.md                  ← 실험 등록서 템플릿
+    └── 12ki_w7_magical_week.md      ← 12기 W7 Magical Week 준실험
+```
+
 ## Claude Code 연동
 
 이 레포는 Claude Code와 함께 사용할 수 있도록 Agent + Skills가 구성되어 있다.
