@@ -31,14 +31,21 @@ W7 Magical Week 기간에 새로운 이벤트를 기획하여, 이 이벤트 주
 
 > ⏳ 운영진 협의 후 확정 예정
 
+**노출 설계 원칙:**
+
+노출 여부를 접속 여부에 맡기지 않는다.
+W7 시작 시 카카오톡/슬랙/이메일로 **200명 전원에게 발송**하여 노출을 보장한다.
+이후 실제 접속 여부(`visited_w7_flag`)와 미션 완료 여부를 분리해서 로깅한다.
+
 **로깅 항목 (확정):**
 
 | 컬럼 | 설명 |
 |------|------|
-| `magical_week_exposed_at` | 노출 시점 |
-| `magical_week_joined_at` | 참여 시점 |
-| `magical_week_mission_completed_at` | 완료 시점 |
-| `magical_week_participation_level` | 단계 (노출 / 부분 완료 / 완전 완료) |
+| `magical_week_notified_at` | 전원 알림 발송 시점 (카카오/슬랙/이메일) |
+| `visited_w7_flag` | W7 기간(4/26~5/2) 실제 접속 여부 |
+| `magical_week_joined_at` | 이벤트 참여 의사 표명 / 등록 시점 |
+| `magical_week_mission_completed_at` | 핵심 미션 완료 시점 |
+| `magical_week_participation_level` | 단계 (미접속 / 접속 / 부분 완료 / 완전 완료) |
 
 ## 데이터 설계
 
@@ -98,10 +105,14 @@ W7 Magical Week 기간에 새로운 이벤트를 기획하여, 이 이벤트 주
 
 ### ITT / ATT 분리 분석
 
-| 분석 | 기준 | 해석 |
-|------|------|------|
-| ITT (Intent-to-Treat) | `magical_week_exposed_at` | 노출 자체의 효과 |
-| ATT (Average Treatment on Treated) | `magical_week_mission_completed_at` | 실제 수행의 효과 |
+| 분석 | 대상 | 기준 | 해석 |
+|------|------|------|------|
+| ITT (Intent-to-Treat) | 전원 200명 | `magical_week_notified_at` | 알림 발송 자체의 효과 |
+| ATT (Average Treatment on Treated) | W7 접속자 | `magical_week_mission_completed_at` | 실제 수행의 효과 |
+| 이탈 분석 | W7 미접속자 | `visited_w7_flag = 0` | 이미 이탈한 집단 별도 파악 |
+
+> ITT와 ATT 결과가 같은 방향이면 알림 발송 자체도 효과가 있다는 근거.
+> 방향이 다르면 알림은 효과 없고 실제 수행만 유효함을 의미.
 
 ## 해석 주의문
 
@@ -169,16 +180,17 @@ GROUP BY p.participant_id, p.cohort_id, ...;
 
 ### Treatment 로깅 설계 (4/26 W7 시작 시 ON)
 
-event_log에 4가지 이벤트를 추가한다:
+event_log에 5가지 이벤트를 추가한다:
 
 ```sql
 -- event_log 추가 이벤트 정의
 event_name                            트리거 시점
 -------------------------------------------------------
-magical_week_exposed                  참여자에게 W7 이벤트 안내 발송 시
+magical_week_notified                 200명 전원 알림 발송 시 (카카오/슬랙/이메일)
+magical_week_visited                  W7 기간(4/26~5/2) 접속 확인 시
 magical_week_joined                   이벤트 참여 의사 표명 / 등록 시
 magical_week_mission_completed        핵심 미션 완료 확인 시
-magical_week_reminder_sent            리마인드 메시지 발송 시 (노출 로그)
+magical_week_reminder_sent            리마인드 메시지 발송 시
 ```
 
 ```sql
@@ -206,7 +218,8 @@ participation_level 값 정의 (운영진 확정 후 채울 것):
 
 | 값 | 설명 |
 |---|---|
-| `exposed` | 안내만 받음 |
+| `notified_only` | 알림 받았으나 W7 기간 미접속 |
+| `visited` | 접속했으나 이벤트 미참여 |
 | `partial` | 참여했으나 미션 미완료 |
 | `full` | 핵심 미션 완료 |
 
