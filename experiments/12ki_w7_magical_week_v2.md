@@ -3,6 +3,10 @@
 > v2 변경 내용: 핵심 가정 명시, Treatment binary cut 확정, SMD 균형 검사 대응 흐름 추가,
 > 표본 크기 및 MDE 계산 항목 추가, Spillover 처리 방법 확정, 해석 주의문 강화
 
+> **참조 문서:** 메트릭 정의, 하이브리드 배정 방식, Quasi-experiment 설계 원칙은
+> [`docs/EXPERIMENT_PLAYBOOK.md`](../docs/EXPERIMENT_PLAYBOOK.md)를 기준으로 한다.
+> 이 문서는 12기 W7 실험에 특정된 결정사항만 기재한다.
+
 ---
 
 ## 기본 정보
