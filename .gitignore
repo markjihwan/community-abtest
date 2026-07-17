@@ -2,3 +2,14 @@
 Thumbs.db
 *.tmp
 dev/
+
+# 로컬 에이전트 세션/상태 — 레포 자산 아님 (모든 depth)
+**/.omc/
+
+# Python
+__pycache__/
+*.pyc
+
+# 로컬 환경변수/토큰
+.env
+.env.*

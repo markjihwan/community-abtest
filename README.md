@@ -2,6 +2,13 @@
 
 `abtest`는 커뮤니티/러닝 프로그램 운영 환경에서 실험을 설계하고 해석하기 위한 문서 중심 프로젝트다.
 
+> **📌 2026-07 업데이트 — 최신 실험 워크스페이스**
+> 2026-06~07 실험(12기 중간 회고 준실험 실측, 사이드바 A/B 설계)은 새 워크스페이스 구조로 운영한다. 진입점: [`INDEX.md`](INDEX.md)
+> - [`00_common/`](00_common/) — playbook v2(KPI 계층·하이브리드 배정·quasi 원칙·4-state 판정), 통계 스크립트 4종, 플랫폼 설계, 트래킹 원칙
+> - [`01_experiments/`](01_experiments/) — `01_reflection`(중간 회고 준실험, 실측 결과 포함) · `02_sidebar`(사이드바 내비게이션 A/B)
+> - [`03_memory/`](03_memory/) — 세션 핸드오프(RESUME)·문서 계보(HISTORY) / [`04_results/`](04_results/) — 실측 중간결과
+> - 협업자 실명은 이니셜로, 내부 API 엔드포인트·토큰은 마스킹 처리됨. 아래 기존 문서 세트(`docs/`)는 이 워크스페이스의 방법론적 토대다.
+
 이 프로젝트는 이상적인 랜덤 A/B 테스트를 지향하되, 실제 운영에서는 기수 단위 비교가 중심이 되는 환경을 전제로 한다. 따라서 본 문서 세트는 `randomized A/B test`와 `cohort-based comparative experiment`를 구분해서 설명한다.
 
 ## Core Principle
